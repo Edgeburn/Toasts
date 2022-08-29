@@ -2,7 +2,7 @@ package dev.cbyrne.toasts.impl.builder;
 
 import dev.cbyrne.toasts.handler.ToastDecayHandler;
 import dev.cbyrne.toasts.impl.BasicToast;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.LiteralTextContent;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
@@ -35,7 +35,7 @@ public class BasicToastBuilder {
      * @see BasicToast
      */
     public BasicToastBuilder title(String title) {
-        this._title = new LiteralText(title);
+        this._title = Text.of(title);
         return this;
     }
 
@@ -55,7 +55,7 @@ public class BasicToastBuilder {
      * @see BasicToast
      */
     public BasicToastBuilder description(@NotNull String description) {
-        this._description = new LiteralText(description);
+        this._description = Text.of(description);
         return this;
     }
 

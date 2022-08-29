@@ -29,7 +29,7 @@ public class BasicToast extends ToastBase {
      * @param displayTime  The amount of time to display the toast for
      */
     public BasicToast(Text title, Text description, long displayTime, ToastDecayHandler decayHandler, Identifier icon) {
-        this.title = title.shallowCopy().setStyle(title.getStyle().withBold(true));
+        this.title = title.copy().setStyle(title.getStyle().withBold(true));
         this.text = description;
         this.displayTime = displayTime;
         this.decayHandler = decayHandler;
