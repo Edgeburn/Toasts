@@ -54,5 +54,13 @@ publishing {
 
     repositories {
         mavenLocal()
+        maven {
+            name = "edgeburnmediamaven"
+            url = uri("https://nexus.edgeburnmedia.com/repository/edgeburnmediamaven/")
+            credentials {
+                username = "admin"
+                password = System.getenv("EDGEBURNMEDIA_MAVEN_PASSWORD")
+            }
+        }
     }
 }
