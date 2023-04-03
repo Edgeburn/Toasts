@@ -27,14 +27,14 @@ public abstract class ToastBase implements Toast {
     protected void drawBackground(MatrixStack matrices, ToastManager manager) {
         textRenderer.reset();
 
-        RenderSystem.setShader(GameRenderer::getPositionTexShader);
+        RenderSystem.setShader(GameRenderer::getPositionTexProgram);
         RenderSystem.setShaderTexture(0, TEXTURE);
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
         manager.drawTexture(matrices, 0, 0, 0, 0, this.getWidth(), this.getHeight());
     }
 
     protected void drawTexture(Identifier texture, MatrixStack matrices, ToastManager manager, int x, int y, int width, int height) {
-        RenderSystem.setShader(GameRenderer::getPositionTexShader);
+        RenderSystem.setShader(GameRenderer::getPositionTexProgram);
         RenderSystem.setShaderTexture(0, texture);
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
         DrawableHelper.drawTexture(matrices, x, y, 0, 0, 0, width, height, width, height);
